@@ -22,16 +22,25 @@ public class TestController {
 
     @GetMapping("index")
     @ApiOperation(value = "simple return string")
-//    public String testIndex(){
-//        return "my first web app";
-//    }
+
 
     public String index(HttpServletRequest request){
-        List<Pet> allPets = petService.getAllPets();
-        System.out.println(allPets);
+//        List<Pet> allPets = petService.getAllOwners();
+//        System.out.println(allPets);
+//        String userName = request.getParameter("userName");
+//        String operation = request.getParameter("operation");
 
-        String userName = request.getParameter("userName");
-        System.out.println(userName);
+        String sql = request.getParameter("SQL");
+        List<Pet> allPets = petService.executeAndShowAll(sql);
+        for (Object pet : allPets){
+            System.out.println(pet);
+        }
+        System.out.println("----------------------------------------------------------------------------");
+
+
+        //System.out.println(allPets);
+
+        //return "index";
         return "index";
     }
 

@@ -5,4 +5,8 @@ import java.util.List;
 
 public interface PetDao {
     List<Pet> getAllPetsFromDB();
+
+    List<Pet> getAllOnwersFromDB();
+
+    List<Pet> executeAndShowAll(String sql);
 }

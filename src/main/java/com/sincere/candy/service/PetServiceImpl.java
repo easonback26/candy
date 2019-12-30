@@ -17,4 +17,16 @@ public class PetServiceImpl implements PetService {
     public List<Pet> getAllPets() {
         return petDao.getAllPetsFromDB();
     }
+
+    @Override
+    public List<Pet> getAllOwners() {
+        return petDao.getAllOnwersFromDB();
+    }
+
+    @Override
+    public List<Pet> executeAndShowAll(String sql) {
+        return petDao.executeAndShowAll(sql);
+    }
+
+
 }
